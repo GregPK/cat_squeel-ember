@@ -12,6 +12,13 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
+    'simple-auth': {
+      authorizer: 'simple-auth-authorizer:devise',
+      crossOriginWhitelist: ['*']
+    },
+    'simple-auth-devise': {
+      //serverTokenEndpoint: 'http://localhost:3100/users'
+    },
 
     APP: {
       // Here you can pass flags/options to your application instance
@@ -20,11 +27,11 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.LOG_RESOLVER = true;
+    ENV.APP.LOG_ACTIVE_GENERATION = true;
+    ENV.APP.LOG_TRANSITIONS = true;
+    ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
+    ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
   if (environment === 'test') {
