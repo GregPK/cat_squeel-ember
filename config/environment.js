@@ -14,7 +14,8 @@ module.exports = function(environment) {
     },
     'simple-auth': {
       authorizer: 'simple-auth-authorizer:devise',
-      crossOriginWhitelist: ['*']
+      crossOriginWhitelist: ['*'],
+      authenticationRoute: 'login'
     },
     'simple-auth-devise': {
       //serverTokenEndpoint: 'http://localhost:3100/users'
